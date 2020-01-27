@@ -1,5 +1,5 @@
 ﻿using GpsTimeCalc;
-
+using GpsTimeCalc.Extensions;
 using System;
 using System.Collections.Generic;
 
@@ -17,7 +17,7 @@ namespace GnssCalcTests
         {
             var current = new List<DateTime>();
 
-            foreach (var item in TDS.GpsDateList)
+            foreach (var item in TDS.BdsDateList)
             {
                 current.Add((DateTime)item);
             }
@@ -32,7 +32,7 @@ namespace GnssCalcTests
 
             foreach (var item in TDS.BdsDateList)
             {
-                current.Add((GpsDate)item);
+                current.Add(item.ToGpsDate());
             }
 
             Assert.Equal(TDS.GpsDateList, current);
@@ -43,7 +43,7 @@ namespace GnssCalcTests
         {
             var current = new List<YearDoY>();
 
-            foreach (var item in TDS.GpsDateList)
+            foreach (var item in TDS.BdsDateList)
             {
                 current.Add((YearDoY)item);
             }

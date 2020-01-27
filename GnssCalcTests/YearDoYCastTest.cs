@@ -36,6 +36,7 @@ namespace GnssCalcTests
             }
 
             Assert.Equal(TDS.GpsDateList, current);
+
         }
 
         [Fact]

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GpsTimeCalc
+namespace GpsTimeCalc.Extensions
 {
     public static class DateTimeExtension
     {
@@ -14,7 +14,7 @@ namespace GpsTimeCalc
             {
                 var weeks = delta.Days / 7;
                 var dayOfWeek = delta.Days % 7;
-                return new GpsDate() { Weeks = weeks, DaysOfWeek = dayOfWeek };
+                return new GpsDate(weeks, dayOfWeek);
             }
             throw new ArgumentException("Invalid date: " + date + ", too early");
         }
@@ -26,12 +26,14 @@ namespace GpsTimeCalc
             {
                 var weeks = delta.Days / 7;
                 var dayOfWeek = delta.Days % 7;
-                return new BdsDate() { Weeks = weeks, DaysOfWeek = dayOfWeek };
+                return new BdsDate(weeks, dayOfWeek);
             }
             throw new ArgumentException("Invalid date: " + date + ", too early");
         }
 
-        public static int ToDayOfYear(this DateTime date)
+        public static YearDoY ToYearDoY(this DateTime date) => new YearDoY(date.Year, GetDayOfYear(date));
+
+        private static int GetDayOfYear(this DateTime date)
         {
             var firstDayDate = new DateTime(date.Year, 1, 1);
             var delta = date - firstDayDate;
@@ -39,13 +41,5 @@ namespace GpsTimeCalc
             return (int)delta.TotalDays + 1;
         }
 
-        public static YearDoY ToYearDoY(this DateTime date) => new YearDoY(date.Year, ToDayOfYear(date));
-
-        public static DateTime ToDateTime(this int dayOfYear, int year)
-        {
-            var yearDoY = new YearDoY(year, dayOfYear);
-
-            return (DateTime)yearDoY;
-        }
     }
 }

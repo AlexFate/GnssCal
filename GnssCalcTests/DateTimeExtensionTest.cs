@@ -1,3 +1,4 @@
+using GpsTimeCalc.Extensions;
 using GpsTimeCalc;
 
 using System.Collections.Generic;
@@ -26,19 +27,6 @@ namespace GnssCalcTests
         }
 
         [Fact]
-        public void DateTime2DoYTest()
-        {
-            var current = new List<int>();
-
-            foreach (var item in TDS.DateTimeList)
-            {
-                current.Add(item.ToDayOfYear());
-            }
-
-            Assert.Equal(TDS.DayOfYearList, current);
-        }
-
-        [Fact]
         public void DateTime2YearDoYTest()
         {
             var current = new List<YearDoY>();
@@ -52,7 +40,7 @@ namespace GnssCalcTests
         }
 
         [Fact]
-        public void DateTime2BdsTimeTest()
+        public void DateTime2BdsDateTest()
         {
             var current = new List<BdsDate>();
 

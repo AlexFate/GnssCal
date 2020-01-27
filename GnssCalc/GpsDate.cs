@@ -1,16 +1,17 @@
-﻿using System;
+﻿using GpsTimeCalc.Core;
+using GpsTimeCalc.Extensions;
+using System;
 
 namespace GpsTimeCalc
 {
-    public struct GpsDate
+    public class GpsDate : GnssDateBase
     {
-        public int Weeks { get; set; }
-        public int DaysOfWeek { get; set; }
-
-        public GpsDate(int weeks, int daysOfWeek) : this()
+        public GpsDate(int weeks, int daysOfWeek) : base()
         {
             Weeks = weeks;
             DaysOfWeek = daysOfWeek;
+
+            StartDate = new DateTime(1980, 1, 6);
         }
 
         public static explicit operator DateTime(GpsDate gpsTime)
@@ -19,7 +20,7 @@ namespace GpsTimeCalc
                 throw new ArgumentException("Invalid GnssDate:" + gpsTime);
             var delta = TimeSpan.FromDays((gpsTime.Weeks * 7) + gpsTime.DaysOfWeek);
 
-            return DateTimeExtension.GPS_START_DATE + delta;
+            return gpsTime.StartDate + delta;
         }
 
         public static explicit operator YearDoY(GpsDate gpsTime)
@@ -32,6 +33,14 @@ namespace GpsTimeCalc
         {
             var dateTime = (DateTime)gpsTime;
             return dateTime.ToBdsTime();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var gpsObj = obj as GpsDate;
+            if (gpsObj == null) return false;
+
+            return gpsObj.DaysOfWeek == DaysOfWeek && gpsObj.Weeks == Weeks && gpsObj.StartDate == StartDate;
         }
 
     }

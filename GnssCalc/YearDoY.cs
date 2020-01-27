@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GpsTimeCalc.Extensions;
+using System;
 
 namespace GpsTimeCalc
 {
