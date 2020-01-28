@@ -2,6 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Copyright>Alexandr Ponizov</Copyright>
+    <PackageProjectUrl>https://github.com/AlexFate/GnssCal/wiki</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlexFate/GnssCal</RepositoryUrl>
+    <RepositoryType />
+    <PackageTags>gnsscal, python, analog</PackageTags>
+    <Authors>Alexandr Ponizov aka AlexFate</Authors>
+    <Description>This project is analog of Python's gnsscal package. It provide three most popular GnssDate types such as GpsDate, BdsDate, YearDoY. And, of course, it provide Extensions to type casting.</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
