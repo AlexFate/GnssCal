@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GnssCalc\GpsTimeCalc.csproj" />
+    <ProjectReference Include="..\GnssCalc\GnssCalc.csproj" />
   </ItemGroup>
 
 </Project>

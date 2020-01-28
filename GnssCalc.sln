@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GpsTimeCalc", "GnssCalc\GpsTimeCalc.csproj", "{C30B60FA-BDDF-49DF-9437-37EBF0ADF7AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnssCalc", "GnssCalc\GnssCalc.csproj", "{C30B60FA-BDDF-49DF-9437-37EBF0ADF7AF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnssCalcTests", "GnssCalcTests\GnssCalcTests.csproj", "{19048696-4C42-4AAE-9D2B-4195936648D0}"
 EndProject
