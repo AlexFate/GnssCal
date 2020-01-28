@@ -8,7 +8,7 @@ namespace GpsTimeCalc.Extensions
 
         public static YearDoY ToYearDoY(this GpsDate gpsDate) => (YearDoY)gpsDate;
 
-        public static BdsDate ToGpsDate(this GpsDate gpsDate) => (BdsDate)gpsDate;
+        public static BdsDate ToBdsDate(this GpsDate gpsDate) => (BdsDate)gpsDate;
 
     }
 }
