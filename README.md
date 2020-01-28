@@ -1,5 +1,5 @@
 # Gnss Cal
-This project is analog of Python's gnsscal package. It provide three most popular GnssDate types such as GpsDate, BdsDate, YearDoY. And ,of course, it provide Extensions to type casting.
+This project is analog of Python's gnsscal package. It provide three most popular GnssDate types such as GpsDate, BdsDate, YearDoY. And, of course, it provide Extensions to type casting.
 ## Example
 * [HowTo](https://github.com/AlexFate/GnssCal/wiki) - Project wiki on github
 ## Getting Started - Installation
