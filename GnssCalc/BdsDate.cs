@@ -5,10 +5,17 @@ using System;
 
 namespace GpsTimeCalc
 {
-    public class BdsDate : GnssDateBase
+    public struct BdsDate : IGnssDateBase
     {
-        public BdsDate(int weeks, int daysOfWeek) : base()
+        public int Weeks { get; }
+        public int DaysOfWeek { get; }
+        public DateTime StartDate { get; }
+
+        public BdsDate(int weeks, int daysOfWeek) : this()
         {
+            if (daysOfWeek >= 7 || daysOfWeek < 0)
+                throw new ArgumentOutOfRangeException("DayOfWeek should be in [0 .. 6]. And it was " + daysOfWeek);
+
             Weeks = weeks;
             DaysOfWeek = daysOfWeek;
             StartDate = new DateTime(2006, 1, 1);
@@ -34,12 +41,5 @@ namespace GpsTimeCalc
             return dateTime.ToGpsTime();
         }
 
-        public override bool Equals(object obj)
-        {
-            var bdsObj = obj as BdsDate;
-            if (bdsObj == null) return false;
-
-            return bdsObj.DaysOfWeek == DaysOfWeek && bdsObj.Weeks == Weeks && bdsObj.StartDate == StartDate;
-        }
     }
 }

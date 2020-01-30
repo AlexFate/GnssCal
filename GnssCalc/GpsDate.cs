@@ -4,10 +4,18 @@ using System;
 
 namespace GpsTimeCalc
 {
-    public class GpsDate : GnssDateBase
+    public struct GpsDate : IGnssDateBase
     {
-        public GpsDate(int weeks, int daysOfWeek) : base()
+        public DateTime StartDate { get; }
+
+        public int Weeks { get; }
+        public int DaysOfWeek { get; }
+
+        public GpsDate(int weeks, int daysOfWeek) : this()
         {
+            if (daysOfWeek >= 7 || daysOfWeek < 0)
+                throw new ArgumentOutOfRangeException("DayOfWeek should be in [0 .. 6]. And it was " + daysOfWeek);
+
             Weeks = weeks;
             DaysOfWeek = daysOfWeek;
 
@@ -33,14 +41,6 @@ namespace GpsTimeCalc
         {
             var dateTime = (DateTime)gpsTime;
             return dateTime.ToBdsTime();
-        }
-
-        public override bool Equals(object obj)
-        {
-            var gpsObj = obj as GpsDate;
-            if (gpsObj == null) return false;
-
-            return gpsObj.DaysOfWeek == DaysOfWeek && gpsObj.Weeks == Weeks && gpsObj.StartDate == StartDate;
         }
 
     }

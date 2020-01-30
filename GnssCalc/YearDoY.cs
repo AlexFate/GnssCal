@@ -10,7 +10,7 @@ namespace GpsTimeCalc
 
         public YearDoY(int year, int daysOfYear) : this()
         {
-            if (year < 1980 || year > DateTime.UtcNow.Year || daysOfYear < 1 || daysOfYear > 366)
+            if (year < 1980 || daysOfYear < 1 || daysOfYear > 366)
                 throw new ArgumentException("Year or daysOfYear is invalid: Year: " + year + " DOY: " + daysOfYear);
             Year = year;
             DaysOfYear = daysOfYear;
