@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GpsTimeCalc.Extensions
+namespace GnssCalc.Extensions
 {
     public static class BdsDateExtension
     {

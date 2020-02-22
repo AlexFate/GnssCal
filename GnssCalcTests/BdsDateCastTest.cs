@@ -1,5 +1,6 @@
-﻿using GpsTimeCalc;
-using GpsTimeCalc.Extensions;
+﻿using GnssCalc;
+using GnssCalc.Extensions;
+
 using System;
 using System.Collections.Generic;
 

@@ -1,9 +1,9 @@
-﻿using GpsTimeCalc.Core;
-using GpsTimeCalc.Extensions;
+﻿using GnssCalc.Core;
+using GnssCalc.Extensions;
 
 using System;
 
-namespace GpsTimeCalc
+namespace GnssCalc
 {
     public struct BdsDate : IGnssDateBase
     {

@@ -12,6 +12,8 @@
     <Authors>Alexandr Ponizov aka AlexFate</Authors>
     <Description>This project is analog of Python's gnsscal package. It provide three most popular GnssDate types such as GpsDate, BdsDate, YearDoY. And, of course, it provide Extensions to type casting.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

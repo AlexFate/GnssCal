@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GpsTimeCalc.Core
+namespace GnssCalc.Core
 {
     public interface IGnssDateBase
     {
